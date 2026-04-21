@@ -4,7 +4,8 @@ const doctorSchema = new mongoose.Schema(
     {
         name:{type: String, required: true},
         email:{type: String, required: true, unique: true, lowercase: true},
-        password:{type: String, required: true}
+        password:{type: String, required: true},
+        specialization:{type: String, required: true}
     }
 )
-GPUShaderModule.exports= mongoose.model('Doctor',doctorSchema)
+module.exports= mongoose.model('Doctor',doctorSchema)
