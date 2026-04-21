@@ -30,10 +30,9 @@ export default function PatientForm({onPatientAdded}){
         medicalHistory:'',
         assignedDoctor:''})
 
-        }catch(err){
-            AudioListener('Error adding patient: ' + err.response ? .data?.error || err.message)
+        } catch (err) {
+    AudioListener('Error adding patient: ' + (err.response?.data?.error || err.message));
         }
-    }
 
     return(
         <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded shadow">
@@ -55,4 +54,5 @@ export default function PatientForm({onPatientAdded}){
             <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded">Add Patient</button>
         </form>
     )
+    }
 }
